@@ -73,4 +73,22 @@ void keyboard(unsigned char key, int x, int y) {
 // Function to initialize OpenGL
 void initializeOpenGL(int argc, char** argv) {
     glutInit(&argc, argv);
-    glut
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowSize(width, height);
+    glutCreateWindow("Geometric Operations in 2D");
+
+    glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // White background
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D(0, width, 0, height);
+
+    glutDisplayFunc(display);
+    glutKeyboardFunc(keyboard);
+}
+
+// Main function
+int main(int argc, char** argv) {
+    initializeOpenGL(argc, argv);
+    glutMainLoop();
+    return 0;
+}

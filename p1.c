@@ -1,6 +1,5 @@
 #include <GL/glut.h>
 #include <stdio.h>
-
 int x1, Y1, x2, Y2;
 
 void myInit() {
