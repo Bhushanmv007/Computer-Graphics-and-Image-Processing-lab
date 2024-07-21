@@ -46,27 +46,27 @@ void myDisplay() {
 }
 
 void myReshape(int w,int h){
-	         glViewport(0,0,w,h);
-		 glMatrixMode(GL_PROJECTION);
-		 glLoadIdentity();
-		 if(w<=h)
-		 	glOrtho(-2,2,-2*(GLfloat)h/(GLfloat)w,2*(GLfloat)h/(GLfloat)w,-10,10);
-		 else
-		 	glOrtho(-2*(GLfloat)w/(GLfloat)h,2*(GLfloat)w/(GLfloat)h,-2,2,-10,10);
-		 glMatrixMode(GL_MODELVIEW);
-		 glutPostRedisplay();
-			}
-		int main(int argc,char**argv)
-		{
-		glutInit(&argc,argv);
-		glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGB|GLUT_DEPTH);
-		glutInitWindowSize(1200,1000);
-		glutInitWindowPosition(10,10);
-		glutCreateWindow("3D GEOMETRIC OPERATIONS");
-		myInit();
-		glutReshapeFunc(myReshape);
-		glutDisplayFunc(myDisplay);
-		glEnable(GL_DEPTH_TEST);
-		glutMainLoop();
-		return 0;
-		}
+    glViewport(0,0,w,h);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	if(w<=h)
+	 	glOrtho(-2,2,-2*(GLfloat)h/(GLfloat)w,2*(GLfloat)h/(GLfloat)w,-10,10);
+	else
+	 	glOrtho(-2*(GLfloat)w/(GLfloat)h,2*(GLfloat)w/(GLfloat)h,-2,2,-10,10);
+	glMatrixMode(GL_MODELVIEW);
+	glutPostRedisplay();
+}
+
+int main(int argc,char**argv){
+	glutInit(&argc,argv);
+	glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGB|GLUT_DEPTH);
+	glutInitWindowSize(1200,1000);
+	glutInitWindowPosition(10,10);
+	glutCreateWindow("3D GEOMETRIC OPERATIONS");
+	myInit();
+	glutReshapeFunc(myReshape);
+	glutDisplayFunc(myDisplay);
+	glEnable(GL_DEPTH_TEST);
+	glutMainLoop();
+	return 0;
+}
