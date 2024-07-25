@@ -23,12 +23,14 @@ void draw_line(int x1, int x2, int Y1, int Y2) {
         dx = -dx;
     if (dy < 0)
         dy = -dy;
+
     incx = 1;
     if (x2 < x1)
         incx = -1;
     incy = 1;
     if (Y2 < Y1)
         incy = -1;
+        
     x = x1;
     y = Y1;
     if (dx > dy) {
