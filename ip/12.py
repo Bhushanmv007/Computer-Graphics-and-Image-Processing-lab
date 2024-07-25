@@ -10,8 +10,7 @@ image = cv2.imread('sample.jpg')
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # Detect faces in the image
-faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, 
-minNeighbors=6, minSize=(30, 30))
+faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=6, minSize=(30, 30))
 
 # Draw rectangles around the detected faces
 for (x, y, w, h) in faces:
