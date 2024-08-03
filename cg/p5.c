@@ -14,24 +14,24 @@ int objectType = 0; // 0 for Tetrahedron, 1 for Cube
 void drawTetra() {
     glBegin(GL_TRIANGLES);
     glColor3f(1.0, 0.0, 0.0);
-    glVertex3f(1.0, 1.0, 1.0);//xyz
-    glVertex3f(-1.0, -1.0, 1.0);//z
-    glVertex3f(-1.0, 1.0, -1.0);//y
+    glVertex3f(1.0, 1.0, 1.0);
+    glVertex3f(-1.0, -1.0, 1.0);
+    glVertex3f(-1.0, 1.0, -1.0);
 
     glColor3f(0.0, 1.0, 0.0);
-    glVertex3f(1.0, 1.0, 1.0);//xyz
-    glVertex3f(-1.0, 1.0, -1.0);//y
-    glVertex3f(1.0, -1.0, -1.0);//x
+    glVertex3f(1.0, 1.0, 1.0);
+    glVertex3f(-1.0, 1.0, -1.0);
+    glVertex3f(1.0, -1.0, -1.0);
 
     glColor3f(0.0, 0.0, 1.0);
-    glVertex3f(1.0, 1.0, 1.0);//xyz
-    glVertex3f(-1.0, -1.0, 1.0);//z
-    glVertex3f(1.0, -1.0, -1.0);//x
+    glVertex3f(1.0, 1.0, 1.0);
+    glVertex3f(-1.0, -1.0, 1.0);
+    glVertex3f(1.0, -1.0, -1.0);
 
     glColor3f(0.0, 1.0, 1.0);
-    glVertex3f(-1.0, -1.0, 1.0);//z
-    glVertex3f(-1.0, 1.0, -1.0);//y
-    glVertex3f(1.0, -1.0, -1.0);//x
+    glVertex3f(-1.0, -1.0, 1.0);
+    glVertex3f(-1.0, 1.0, -1.0);
+    glVertex3f(1.0, -1.0, -1.0);
     glEnd();
 }
 
