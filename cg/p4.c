@@ -83,8 +83,8 @@ void keyboard(unsigned char key, int x, int y) {
             break;
         case 'u':
             // Reset transformations (translate back to center, reset rotation and scaling)
-            rectPositionX = 0.0f;
-            rectPositionY = 0.0f;
+            rectPositionX = (width - rectWidth) / 2.0f;
+            rectPositionY = (height - rectHeight) / 2.0f;
             rotationAngle = 0.0f;
             scaleFactor = 1.0f;
             break;
