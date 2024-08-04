@@ -1,8 +1,8 @@
 #include <GL/glut.h>
 
 // Global variables
-const int width = 800;
-const int height = 600;
+const float width = 800;
+const float height = 600;
 const float rectWidth = 100.0f;
 const float rectHeight = 50.0f;
 float rectPositionX = (width - rectWidth) / 2.0f;
@@ -37,26 +37,24 @@ void display() {
     glLoadIdentity();
 
     // Apply transformations
-if(selectedObject == 0){
-    glTranslatef(rectPositionX, rectPositionY, 0.0f);
-    glRotatef(rotationAngle, 0.0f, 0.0f, 1.0f);
-    glScalef(scaleFactor, scaleFactor, 1.0f);
+    if(selectedObject == 0){
+       glTranslatef(rectPositionX, rectPositionY, 0.0f);
+       glRotatef(rotationAngle, 0.0f, 0.0f, 1.0f);
+       glScalef(scaleFactor, scaleFactor, 1.0f);
 
-    // Draw rectangle
-    glColor3f(1.0f, 0.0f, 0.0f); // Red color
-    drawRectangle(0.0f, 0.0f, rectWidth, rectHeight);
+       // Draw rectangle
+       glColor3f(1.0f, 0.0f, 0.0f); // Red color
+       drawRectangle(0.0f, 0.0f, rectWidth, rectHeight);
+   }
+    else if(selectedObject == 1){
+       glTranslatef(width/2.0f, height/2.0f, 0.0f);
+       glTranslatef(rectPositionX, rectPositionY, 0.0f);
+       glRotatef(rotationAngle, 0.0f, 0.0f, 1.0f);
+       glScalef(scaleFactor, scaleFactor, 1.0f);
 
-    glFlush();
-}
-else if(selectedObject == 1){
-    glTranslatef(width/2.0f, height/2.0f, 0.0f);
-    glTranslatef(rectPositionX, rectPositionY, 0.0f);
-    glRotatef(rotationAngle, 0.0f, 0.0f, 1.0f);
-    glScalef(scaleFactor, scaleFactor, 1.0f);
-
-    // Draw rectangle
-    glColor3f(0.0f, 1.0f, 0.0f); // Red color
-    drawTriangle(-350.0f, -325.0f, 100.0f, 100.0f);
+       // Draw rectangle
+       glColor3f(0.0f, 1.0f, 0.0f); // Red color
+       drawTriangle(-350.0f, -325.0f, 100.0f, 100.0f);
     }
 
     glFlush();
@@ -117,11 +115,11 @@ int main (int argc, char** argv) {
 
     glutDisplayFunc(display);
     glutKeyboardFunc(keyboard);
-	glutCreateMenu(menu);
-	glutAddMenuEntry("Rectangle", 0);
-	glutAddMenuEntry("Triangle", 1);
-	glutAttachMenu(GLUT_RIGHT_BUTTON);
+    glutCreateMenu(menu);
+    glutAddMenuEntry("Rectangle", 0);
+    glutAddMenuEntry("Triangle", 1);
+    glutAttachMenu(GLUT_RIGHT_BUTTON);
 	
-	glutMainLoop();
-    	return 0;
+    glutMainLoop();
+    return 0;
 }
